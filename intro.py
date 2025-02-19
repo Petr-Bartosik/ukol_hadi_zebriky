@@ -1,0 +1,10 @@
+def show_rules():
+    print ("Pravidla hry Hadi a žebříky:")
+    print ("1. Hráči se střídají v házení kostkou.")
+    print ("2. Pokud hráč hodí šestku, hází znovu a hody se sčítají.")
+    print ("3. Pokud hráč stoupne na spodní část žebříku, přesune se nahoru.")
+    print ("4. Pokud hráč stoupne na hlavu hada, sklouzne dolů na konec ocasu.")
+    print ("5. První hráč, který dosáhne posledního políčka, vyhrává.")
+    print ("6. Hráč musí hodit přesné číslo na konci, aby vyhrál. Jinak nepostupuje.")
+    print ("7. Pokud se hráči potkají na stejném poli, vrátí jej o pole zpět, kde stále platí pravidlo 3 a 4")
+    print("")
