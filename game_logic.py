@@ -1,6 +1,5 @@
-import time, sys
+import sys
 from game_board import get_snakes, get_ladders
-
 
 MAX_VAL = 100
 
@@ -31,10 +30,13 @@ def check_same_position(player, pos, other_player, other_pos):
     if pos == other_pos:
         print(f"{player} posunul {other_player} o jedno pole zpět!")
         other_pos -= 1
-        from game_logic import get_snakes, get_ladders
         snakes, ladders = get_snakes(), get_ladders()
         if other_pos in snakes:
-            other_pos = snakes[other_pos]
+            new_pos = snakes[other_pos]
+            print(f"{other_player} kousl had, propadáš se z {other_pos} na {new_pos}")
+            other_pos = new_pos
         elif other_pos in ladders:
-            other_pos = ladders[other_pos]
+            new_pos = ladders[other_pos]
+            print(f"{other_player} Výborně!! Vyšplhej z {other_pos} na {new_pos}")
+            other_pos = new_pos
     return other_pos

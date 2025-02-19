@@ -1,7 +1,7 @@
 import random, time
 
 SLEEP_BETWEEN_ACTIONS = 1
-DICE_FACE = 6
+DICE_FACE = 2
 
 def roll_dice():
     time.sleep(SLEEP_BETWEEN_ACTIONS)
