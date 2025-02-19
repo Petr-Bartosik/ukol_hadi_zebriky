@@ -1,26 +1,33 @@
+#hazeni kostkou
+
 import random, time
 
-SLEEP_BETWEEN_ACTIONS = 1
-DICE_FACE = 2
+#prodleva
+waiting = 1
+
+#počet stran kostky
+sides_of_dice = 6
 
 def roll_dice():
-    time.sleep(SLEEP_BETWEEN_ACTIONS)
+    time.sleep(waiting) #pauza pred hodem
     total = 0
-    dice_faces = {
+    sides_of_dices = { #hrave tvoreni
         1: "\n   ●\n",
         2: "●\n\n    ●",
         3: "●\n  ●\n    ●",
         4: "●   ●\n\n●   ●",
         5: "●   ●\n  ●\n●   ●",
         6: "●   ●\n●   ●\n●   ●"
-    }  # Lepší čitelnost pro zobrazení hodnot kostky
+    }
     while True:
-        roll = random.randint(1, DICE_FACE)
-        print(f"Hozeno: \n{dice_faces[roll]}")
-        total += roll
-        if roll != 6:
+        roll = random.randint(1, sides_of_dice) #random cislo 1-6(sides of dice)
+
+        print(f"Hozeno: \n{sides_of_dices[roll]}") #vizual
+        total += roll #pricteni hozene hodnoty k SOUCTU
+
+        if roll != 6: #pokud jine cislo nez 6 = break hazeni
             break
         print("Hodil jsi šestku. Tak hážeš ještě jednou.")
-    return total
+    return total #vratka vsech hodu (soucet)
 
 
